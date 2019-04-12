@@ -28,8 +28,8 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/file', express.static(path.resolve(__dirname, '..', 'tmp')));
+app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')));
 
 app.use(require('./routes'));
 
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
